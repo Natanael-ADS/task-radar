@@ -11,6 +11,13 @@ description: >-
 
 Skill **genérica**: aplica a stack, pastas e convenções **já existentes** no projeto. Onde faltar norma local, propõe o mínimo consistente e deixa nota para o humano afinar.
 
+## Regra de estrutura do projeto (obrigatória)
+
+- Antes de criar novos diretórios/arquivos-base de arquitetura, mapear a estrutura existente e reutilizar o padrão já adotado.
+- Se já existir pasta equivalente (ex.: `lib/app/di`, `lib/core`, `features/...`), usar essa estrutura e **não** criar hierarquia paralela.
+- Evitar mover/renomear arquitetura sem pedido explícito.
+- Em caso de dúvida entre dois padrões possíveis, pedir confirmação antes de criar uma nova organização.
+
 ## Clean code
 
 - Nomes que revelam intenção; evitar abreviações opacas e "números mágicos" sem constante.
@@ -53,6 +60,8 @@ Skill **genérica**: aplica a stack, pastas e convenções **já existentes** no
 
 ## Checklist rápido antes de concluir
 
+- [ ] Verifiquei a estrutura existente e reutilizei o padrão já adotado.
+- [ ] Evitei criar pastas/arquitetura paralela quando já havia equivalente no projeto.
 - [ ] Camadas e imports respeitam a arquitetura do projeto.
 - [ ] Nomes, erros e estados legíveis e consistentes com o código existente.
 - [ ] UI alinhada ao design system (ou justificativa mínima se exceção).
