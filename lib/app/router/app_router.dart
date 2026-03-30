@@ -1,0 +1,17 @@
+import 'package:go_router/go_router.dart';
+
+import '../../features/home/presentation/pages/home_page.dart';
+import 'app_routes.dart';
+
+class AppRouter {
+  static final GoRouter router = GoRouter(
+    initialLocation: AppRoutes.home,
+    routes: [
+      GoRoute(
+        path: AppRoutes.home,
+        name: AppRoutes.home,
+        builder: (_, _) => const HomePage(),
+      ),
+    ],
+  );
+}
