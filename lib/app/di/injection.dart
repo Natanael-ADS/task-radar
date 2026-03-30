@@ -2,10 +2,10 @@ import 'app_di.dart';
 import 'get_it_di.dart';
 import 'registrars.dart';
 
-/// Instância global de DI consumida pelo app.
+/// Ponto único de acesso ao container de DI da aplicação.
 final AppDi getIt = createGetItDi();
 
-/// Registra dependências uma vez, antes do [runApp].
+/// Executa o registro de dependências no bootstrap do app.
 Future<void> configureDependencies() async {
   await registerAppDependencies(getIt);
 }
