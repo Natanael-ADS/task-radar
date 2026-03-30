@@ -8,9 +8,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:task_radar/app/bootstrap/bootstrap.dart';
+import 'package:task_radar/app/di/injection.dart';
 import 'package:task_radar/main.dart';
 
 void main() {
+  setUp(() async {
+    await bootstrap();
+  });
+
+  tearDown(() async {
+    await getIt.reset();
+  });
+
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
