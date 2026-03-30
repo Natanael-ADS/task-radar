@@ -25,6 +25,13 @@ Skill **genérica**: aplica a stack, pastas e convenções **já existentes** no
 - Comentários só para o "porquê" não óbvio; código legível em primeiro lugar.
 - Duplicação: DRY com critério — não abstrair antes de haver segunda ocorrência real.
 
+## Regra obrigatória de comentários (clean code)
+
+- Comentário é permitido apenas quando agrega contexto não óbvio (motivo da decisão, trade-off, restrição de negócio/técnica).
+- É proibido comentar o óbvio ou descrever literalmente o que o código já expressa.
+- Preferir clareza por nomes, funções pequenas e composição antes de adicionar comentários.
+- Quando houver comentário, escrever curto, direto e atualizado com o comportamento real do código.
+
 ## Clean architecture
 
 - Regras de negócio e contratos estáveis no núcleo; detalhes de framework, IO e UI nas bordas.
@@ -64,6 +71,7 @@ Skill **genérica**: aplica a stack, pastas e convenções **já existentes** no
 - [ ] Evitei criar pastas/arquitetura paralela quando já havia equivalente no projeto.
 - [ ] Camadas e imports respeitam a arquitetura do projeto.
 - [ ] Nomes, erros e estados legíveis e consistentes com o código existente.
+- [ ] Comentários seguem clean code (somente contexto não óbvio; sem descrever o óbvio).
 - [ ] UI alinhada ao design system (ou justificativa mínima se exceção).
 - [ ] Estado modelado sem ambiguidade; padrão de estado adequado ao caso.
 - [ ] Testes ou extensão de testes quando o projeto exige.
