@@ -24,6 +24,7 @@ Skill **genérica**: aplica a stack, pastas e convenções **já existentes** no
 - Funções/métodos curtos, uma responsabilidade principal; extrair quando crescer demais.
 - Comentários só para o "porquê" não óbvio; código legível em primeiro lugar.
 - Duplicação: DRY com critério — não abstrair antes de haver segunda ocorrência real.
+- Em funções anônimas/closures, quando um parâmetro não for usado, nomeá-lo como `_`.
 
 ## Regra obrigatória de comentários (clean code)
 

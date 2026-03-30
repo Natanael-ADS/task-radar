@@ -18,7 +18,7 @@ void main() {
   });
 
   tearDown(() async {
-    await getIt.reset();
+    await injector.reset();
   });
 
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
