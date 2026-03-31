@@ -1,0 +1,12 @@
+---
+description: Convenções de legibilidade Flutter/Dart para parâmetros anônimos e builders
+globs: **/*.dart
+alwaysApply: false
+---
+
+# Legibilidade Flutter/Dart
+
+- Em closures, se o parâmetro não for usado, nomear como `_`.
+- Preferir `ListenableBuilder`/`ValueListenableBuilder` para escuta de estado sem animação.
+- Evitar `AnimatedBuilder` quando ele só estiver sendo usado como listener genérico.
+- Em caso de conflito entre regra e padrão já consolidado no código local, manter consistência local e registrar a exceção no comentário do PR.
