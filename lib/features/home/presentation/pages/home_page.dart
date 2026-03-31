@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
       animation: _themeController,
       builder: (context, child) {
         final isDarkMode = _themeController.isDarkMode;
+        final textTheme = Theme.of(context).textTheme;
 
         return Scaffold(
           appBar: AppBar(
@@ -50,13 +51,18 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(isDarkMode ? 'Tema atual: Escuro' : 'Tema atual: Claro'),
-                const SizedBox(height: 16),
-                const Text('Você apertou o botão esta quantidade de vezes:'),
                 Text(
-                  '$_counter',
-                  style: Theme.of(context).textTheme.headlineMedium,
+                  isDarkMode ? 'Tema atual: Escuro' : 'Tema atual: Claro',
+                  style: textTheme.titleMedium,
+                  textAlign: TextAlign.center,
                 ),
+                const SizedBox(height: 16),
+                Text(
+                  'Você apertou o botão esta quantidade de vezes:',
+                  style: textTheme.bodyMedium,
+                  textAlign: TextAlign.center,
+                ),
+                Text('$_counter', style: textTheme.headlineMedium),
               ],
             ),
           ),
