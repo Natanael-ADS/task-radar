@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app/bootstrap/bootstrap.dart';
 import 'app/di/injection.dart';
 import 'app/router/app_router.dart';
-import 'app/theme/app_theme_controller.dart';
+import 'app/theme/app_theme_cubit.dart';
 import 'app/theme/app_theme_data.dart';
 
 Future<void> main() async {
@@ -16,19 +17,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeController = injector.get<AppThemeController>();
+    final themeCubit = injector.get<AppThemeCubit>();
 
-    return ListenableBuilder(
-      listenable: themeController,
-      builder: (_, _) {
-        return MaterialApp.router(
-          title: 'task_radar',
-          theme: AppThemeData.light(),
-          darkTheme: AppThemeData.dark(),
-          themeMode: themeController.themeMode,
-          routerConfig: AppRouter.router,
-        );
-      },
+    return BlocProvider.value(
+      value: themeCubit,
+      child: BlocBuilder<AppThemeCubit, ThemeMode>(
+        builder: (_, themeMode) {
+          return MaterialApp.router(
+            title: 'task_radar',
+            theme: AppThemeData.light(),
+            darkTheme: AppThemeData.dark(),
+            themeMode: themeMode,
+            routerConfig: AppRouter.router,
+          );
+        },
+      ),
     );
   }
 }
