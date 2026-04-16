@@ -7,6 +7,11 @@ alwaysApply: false
 # Legibilidade Flutter/Dart
 
 - Em closures, se o parâmetro não for usado, nomear como `_`.
+- Evitar ao máximo o operador de nulidade forçada `!`.
+- Preferir operadores null-safe e expressões como `_value?.isNotEmpty ?? false` em vez de padrões como `_value != null && _value!.isNotEmpty`.
+- Quando já existir um getter, helper ou função que represente a mesma regra, reutilizar essa abstração e evitar repetir a condição inline.
+- Antes de escrever condições como `accessToken != null && accessToken.isNotEmpty`, verificar se o objeto já expõe algo como `isAuthenticated`, `hasToken`, `hasValue` ou equivalente.
+- Em classes Dart, declarar propriedades/campos no topo da classe, antes de construtores e métodos.
 - Preferir `ListenableBuilder`/`ValueListenableBuilder` para escuta de estado sem animação.
 - Evitar `AnimatedBuilder` quando ele só estiver sendo usado como listener genérico.
 - Em caso de conflito entre regra e padrão já consolidado no código local, manter consistência local e registrar a exceção no comentário do PR.

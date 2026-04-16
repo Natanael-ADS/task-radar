@@ -24,6 +24,8 @@ Skill **genérica**: aplica a stack, pastas e convenções **já existentes** no
 - Funções/métodos curtos, uma responsabilidade principal; extrair quando crescer demais.
 - Comentários só para o "porquê" não óbvio; código legível em primeiro lugar.
 - Duplicação: DRY com critério — não abstrair antes de haver segunda ocorrência real.
+- Quando já existir uma condição, getter, helper ou função no domínio/contexto que expresse a mesma regra, reutilizar essa abstração em vez de repetir a lógica inline.
+- Antes de escrever validações como `value != null && value.isNotEmpty`, verificar se já existe algo como `isValid`, `hasValue`, `isAuthenticated` ou equivalente no objeto responsável.
 - Em funções anônimas/closures, quando um parâmetro não for usado, nomeá-lo como `_`.
 
 ## Regra obrigatória de comentários (clean code)
@@ -72,6 +74,7 @@ Skill **genérica**: aplica a stack, pastas e convenções **já existentes** no
 - [ ] Evitei criar pastas/arquitetura paralela quando já havia equivalente no projeto.
 - [ ] Camadas e imports respeitam a arquitetura do projeto.
 - [ ] Nomes, erros e estados legíveis e consistentes com o código existente.
+- [ ] Reusei condições/getters/helpers existentes antes de repetir regra de negócio ou validação inline.
 - [ ] Comentários seguem clean code (somente contexto não óbvio; sem descrever o óbvio).
 - [ ] UI alinhada ao design system (ou justificativa mínima se exceção).
 - [ ] Estado modelado sem ambiguidade; padrão de estado adequado ao caso.
