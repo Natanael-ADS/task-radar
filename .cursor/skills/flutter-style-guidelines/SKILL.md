@@ -15,6 +15,8 @@ Aplicar estas convenções em código Flutter/Dart, respeitando a estrutura, com
 - Em funções anônimas/closures, quando um parâmetro não for usado, nomear como `_`.
 - Priorizar legibilidade e previsibilidade na árvore de widgets.
 - Preferir APIs reativas mais explícitas para estado simples, evitando complexidade desnecessária.
+- Para guard clauses simples com única ação (`return`, `continue`, `break`), preferir `if` inline em uma linha quando a leitura continuar clara.
+- Em classes Dart, ordenar membros como: `static const`/`const` primeiro, depois variáveis/campos normais e, por último, variáveis de construtor.
 
 ## Builders reativos
 

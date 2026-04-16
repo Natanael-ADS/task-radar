@@ -26,6 +26,9 @@ Skill **genérica**: aplica a stack, pastas e convenções **já existentes** no
 - Duplicação: DRY com critério — não abstrair antes de haver segunda ocorrência real.
 - Quando já existir uma condição, getter, helper ou função no domínio/contexto que expresse a mesma regra, reutilizar essa abstração em vez de repetir a lógica inline.
 - Antes de escrever validações como `value != null && value.isNotEmpty`, verificar se já existe algo como `isValid`, `hasValue`, `isAuthenticated` ou equivalente no objeto responsável.
+- Quando houver guarda simples com uma única ação (ex.: `return`, `continue`, `break`), preferir `if` inline em uma linha para reduzir ruído visual, desde que não prejudique a legibilidade.
+- Em classes Dart, manter ordem de membros: `static const`/`const` primeiro, depois variáveis/campos normais, e por fim variáveis do construtor (parâmetros formais/campos inicializados via construtor).
+- Em classes Dart, separar cada grupo de membros com uma linha em branco (ex.: `const` -> linha em branco -> variáveis normais -> linha em branco -> variáveis de construtor).
 - Em funções anônimas/closures, quando um parâmetro não for usado, nomeá-lo como `_`.
 
 ## Regra obrigatória de comentários (clean code)
